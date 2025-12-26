@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Methodological Flowchart</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            background: white;
+        }
+        .flowchart {
+            width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+        }
+        .title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 16px;
+            font-style: italic;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            margin: 25px 0 15px 0;
+            padding: 8px;
+            background: #f0f0f0;
+            border-radius: 5px;
+        }
+        .box-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            gap: 15px;
+        }
+        .box {
+            padding: 15px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 11px;
+            line-height: 1.6;
+            flex: 1;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .box-title {
+            font-weight: bold;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+        .remote {
+            background: #E8F4F8;
+        }
+        .field {
+            background: #F5E6D3;
+        }
+        .lulc {
+            background: #E8F5E9;
+        }
+        .process {
+            background: #FFF9E6;
+        }
+        .integration {
+            background: #F3E5F5;
+        }
+        .output {
+            background: #FFEBEE;
+        }
+        .arrow {
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+            margin: 5px 0;
+        }
+        .track {
+            flex: 1;
+            padding: 0 10px;
+        }
+        .tracks-container {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .single-box {
+            max-width: 600px;
+            margin: 15px auto;
+        }
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 11px;
+        }
+        .legend-box {
+            width: 30px;
+            height: 20px;
+            border: 1px solid #333;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flowchart">
+        <div class="title">DETAILED METHODOLOGICAL FLOWCHART</div>
+        <div class="subtitle">Soil Organic Carbon Dynamics in Sunamganj Haor Wetlands (1985-2025)</div>
+        
+        <!-- Study Area -->
+        <div class="single-box">
+            <div class="box field">
+                <div>
+                    <div class="box-title">STUDY AREA</div>
+                    Sunamganj Haor Basin, Northeastern Bangladesh<br>
+                    9 Sampling Locations | ~1,235 km²<br>
+                    Seasonally Flooded Lowland Wetland
+                </div>
+            </div>
+        </div>
+        
+        <div class="arrow">↓</div>
+        
+        <!-- Data Sources -->
+        <div class="section-title">DATA SOURCES</div>
+        <div class="box-container">
+            <div class="box remote">
+                <div>
+                    <div class="box-title">LANDSAT DATA</div>
+                    1985-2024<br>
+                    L5 TM | L7 ETM+ | L8 OLI<br>
+                    Collection 2 Level-2<br>
+                    Surface Reflectance<br>
+                    30m resolution<br>
+                    Cloud cover <70%
+                </div>
+            </div>
+            <div class="box remote">
+                <div>
+                    <div class="box-title">SENTINEL-2 MSI</div>
+                    2015-2025<br>
+                    Level-1C TOA Reflectance<br>
+                    Bands: B2, B3, B4, B8<br>
+                    10m resolution<br>
+                    Cloud cover <30%<br>
+                    Annual composites
+                </div>
+            </div>
+            <div class="box remote">
+                <div>
+                    <div class="box-title">ESA CCI AGB</div>
+                    2010-2020<br>
+                    Multi-sensor fusion<br>
+                    ALOS PALSAR | ASAR<br>
+                    100m resolution<br>
+                    Above-ground biomass<br>
+                    Validation dataset
+                </div>
+            </div>
+            <div class="box field">
+                <div>
+                    <div class="box-title">FIELD SAMPLING</div>
+                    1985 & 2025<br>
+                    9 Locations<br>
+                    Topsoil (0-15 cm)<br>
+                    Subsoil (15-30 cm)<br>
+                    GPS: ±5m accuracy<br>
+                    Diverse land uses
+                </div>
+            </div>
+        </div>
+        
+        <div class="arrow">↓</div>
+        
+        <!-- Processing -->
+        <div class="section-title">DATA PROCESSING & ANALYSIS</div>
+        <div class="tracks-container">
+            <!-- Track 1: NDVI -->
+            <div class="track">
+                <div class="box process" style="min-height: 60px;">
+                    <div>
+                        <div class="box-title">QUALITY CONTROL</div>
+                        Cloud masking<br>
+                        QA band filtering<br>
+                        Scene-level: >70%<br>
+                        Pixel-level masking
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="box remote" style="min-height: 60px;">
+                    <div>
+                        <div class="box-title">NDVI CALCULATION</div>
+                        L5/7: (B4-B3)/(B4+B3)<br>
+                        L8: (B5-B4)/(B5+B4)<br>
+                        S2: (B8-B4)/(B8+B4)<br>
+                        Bicubic resampling
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="box remote" style="min-height: 60px;">
+                    <div>
+                        <div class="box-title">TEMPORAL AGGREGATION</div>
+                        Annual composites<br>
+                        Mean NDVI<br>
+                        1988-2024<br>
+                        37-year time series
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="box output" style="min-height: 50px;">
+                    <div>
+                        <div class="box-title">OUTPUT</div>
+                        Regional mean NDVI<br>
+                        Vegetation trends<br>
+                        Inter-annual variability
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Track 2: Biomass -->
+            <div class="track">
+                <div class="box process" style="min-height: 60px;">
+                    <div>
+                        <div class="box-title">CONVERSION MODEL</div>
+                        NDVI to biomass<br>
+                        Quadratic relationship<br>
+                        Validated for wetlands<br>
+                        Saturation correction
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="box remote" style="min-height: 60px;">
+                    <div>
+                        <div class="box-title">BIOMASS ESTIMATION</div>
+                        Annual AGB<br>
+                        t ha⁻¹ yr⁻¹<br>
+                        1988-2024<br>
+                        Productivity metrics
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="box remote" style="min-height: 60px;">
+                    <div>
+                        <div class="box-title">VALIDATION</div>
+                        ESA CCI comparison<br>
+                        2010-2020 overlap<br>
+                        Cross-validation<br>
+                        Standing vs. annual
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="box output" style="min-height: 50px;">
+                    <div>
+                        <div class="box-title">OUTPUT</div>
+                        Biomass time series<br>
+                        Regional stocks<br>
+                        Temporal patterns
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Track 3: LULC -->
+            <div class="track">
+                <div class="box process" style="min-height: 60px;">
+                    <div>
+                        <div class="box-title">CLOUD MASKING</div>
+                        Scene filter <30%<br>
+                        NDVI threshold >0.2<br>
+                        Pixel-level removal<br>
+                        Conservative masking
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="box lulc" style="min-height: 60px;">
+                    <div>
+                        <div class="box-title">LULC CLASSIFICATION</div>
+                        Annual maps 2017-2024<br>
+                        10m resolution<br>
+                        5 classes: Water, Flood,<br>
+                        Flooded, Vegetation, Urban
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="box lulc" style="min-height: 60px;">
+                    <div>
+                        <div class="box-title">BUFFER ANALYSIS</div>
+                        500m radius<br>
+                        Around 9 locations<br>
+                        Area extraction<br>
+                        Class-specific metrics
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="box output" style="min-height: 50px;">
+                    <div>
+                        <div class="box-title">OUTPUT</div>
+                        LULC change 2017-2024<br>
+                        Local patterns<br>
+                        Regional trends
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Track 4: Environmental Indices -->
+            <div class="track">
+                <div class="box process" style="min-height: 60px;">
+                    <div>
+                        <div class="box-title">INDEX CALCULATION</div>
+                        NDVI | NDWI<br>
+                        BUI | LST<br>
+                        Multi-spectral<br>
+                        Thermal bands
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="box remote" style="min-height: 60px;">
+                    <div>
+                        <div class="box-title">TIME SERIES</div>
+                        Annual indices<br>
+                        1985-2025<br>
+                        41-year record<br>
+                        Multi-parameter
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="box remote" style="min-height: 60px;">
+                    <div>
+                        <div class="box-title">TREND ANALYSIS</div>
+                        Hydrological changes<br>
+                        Temperature trends<br>
+                        Urbanization metrics<br>
+                        Long-term patterns
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="box output" style="min-height: 50px;">
+                    <div>
+                        <div class="box-title">OUTPUT</div>
+                        Environmental metrics<br>
+                        40-year changes<br>
+                        Climate indicators
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Track 5: Soil Analysis -->
+            <div class="track">
+                <div class="box process" style="min-height: 60px;">
+                    <div>
+                        <div class="box-title">LAB ANALYSIS</div>
+                        SOC% | Stock<br>
+                        pH | TN | Clay<br>
+                        SBD | CEC<br>
+                        Physicochemical
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="box field" style="min-height: 60px;">
+                    <div>
+                        <div class="box-title">TEMPORAL COMPARISON</div>
+                        1985 vs 2025<br>
+                        40-year changes<br>
+                        9 locations<br>
+                        Multiple parameters
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="box field" style="min-height: 60px;">
+                    <div>
+                        <div class="box-title">SPATIAL ANALYSIS</div>
+                        IDW interpolation<br>
+                        SOC distribution maps<br>
+                        30m resolution<br>
+                        UTM projection
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+                <div class="box output" style="min-height: 50px;">
+                    <div>
+                        <div class="box-title">OUTPUT</div>
+                        SOC dynamics<br>
+                        Spatial patterns<br>
+                        Drivers identification
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="arrow">↓</div>
+        
+        <!-- Integration -->
+        <div class="section-title">DATA INTEGRATION & SYNTHESIS</div>
+        <div class="single-box">
+            <div class="box integration">
+                <div>
+                    <div class="box-title">MULTI-SOURCE INTEGRATION</div>
+                    Spatial joins by location | Temporal alignment (1985, 2025, 2017-2024)<br>
+                    Correlation analysis | LULC-SOC relationships<br>
+                    Environmental indices-SOC dynamics | Biomass-carbon linkages<br>
+                    Statistical analysis | Pattern identification
+                </div>
+            </div>
+        </div>
+        
+        <div class="arrow">↓</div>
+        
+        <!-- Results -->
+        <div class="section-title">RESULTS & INTERPRETATION</div>
+        <div class="box-container">
+            <div class="box output">
+                <div>
+                    <div class="box-title">VEGETATION DYNAMICS</div>
+                    NDVI trends 1988-2024<br>
+                    202% peak increase<br>
+                    Inter-annual variability<br>
+                    Agricultural intensification
+                </div>
+            </div>
+            <div class="box output">
+                <div>
+                    <div class="box-title">BIOMASS PATTERNS</div>
+                    0.28-0.55 t ha⁻¹ yr⁻¹<br>
+                    Standing: 20-30 Mg ha⁻¹<br>
+                    Regional: 25-38 M Mg<br>
+                    Validation confirmed
+                </div>
+            </div>
+            <div class="box output">
+                <div>
+                    <div class="box-title">LULC CHANGES</div>
+                    Water +8.2%<br>
+                    Flood-prone -16.3%<br>
+                    Vegetation +10.2%<br>
+                    Urban +12.5%
+                </div>
+            </div>
+            <div class="box output">
+                <div>
+                    <div class="box-title">SOC DYNAMICS</div>
+                    96-351 Mg ha⁻¹<br>
+                    Apparent stability<br>
+                    Clay control (r=0.67)<br>
+                    Land use effects
+                </div>
+            </div>
+            <div class="box output">
+                <div>
+                    <div class="box-title">ENVIRONMENTAL TRENDS</div>
+                    Temperature +4°C<br>
+                    NDWI -15%<br>
+                    BUI +180%<br>
+                    Hydrological shifts
+                </div>
+            </div>
+        </div>
+        
+        <div class="arrow">↓</div>
+        
+        <!-- Discussion -->
+        <div class="single-box">
+            <div class="box integration">
+                <div>
+                    <div class="box-title">DISCUSSION & IMPLICATIONS</div>
+                    Equilibrium carbon dynamics | Compensatory mechanisms<br>
+                    Hydrological regime changes | Temperature sensitivity<br>
+                    Agricultural intensification impacts | Clay stabilization role<br>
+                    Management recommendations | Conservation priorities
+                </div>
+            </div>
+        </div>
+        
+        <div class="arrow">↓</div>
+        
+        <!-- Conclusion -->
+        <div class="single-box">
+            <div class="box output">
+                <div>
+                    <div class="box-title">CONCLUSIONS</div>
+                    Multi-decadal SOC stability amid environmental change<br>
+                    Threatened by reduced flooding and warming<br>
+                    High carbon stocks warrant protection (25-38 M Mg regional)<br>
+                    Integrated management approach needed for climate mitigation
+                </div>
+            </div>
+        </div>
+        
+        <!-- Legend -->
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-box remote"></div>
+                <span>Remote Sensing Data</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box field"></div>
+                <span>Field Data</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box lulc"></div>
+                <span>LULC Analysis</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box process"></div>
+                <span>Processing Steps</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box integration"></div>
+                <span>Integration/Synthesis</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-box output"></div>
+                <span>Outputs/Results</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
